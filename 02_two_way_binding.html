@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Vue Tutorial - 02 Two Way Binding</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    })
+</script>
+</body>
+</html>
