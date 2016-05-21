@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Vue Tutorial - 01 Hello World</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    })
+</script>
+</body>
+</html>
