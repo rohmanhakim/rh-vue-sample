@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/html" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Vue Tutorial - 05 All Together Now</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+   <input v-model="newToDo" v-on:keyup.enter="addToDo">
+    <ul>
+        <li v-for="todo in todos">
+            <span>{{ todo.text }}</span>
+            <button v-on:click="removeToDo($index)">X</button>
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            newToDo: '',
+            todos: [
+                { text: 'Add some todos' }
+            ]
+        },
+        methods: {
+            addToDo: function () {
+                var text = this.newToDo.trim()
+                if (text) {
+                    this.todos.push({text: text})
+                    this.newToDo = ''
+                }
+            },
+            removeToDo: function (index) {
+                this.todos.splice(index, 1)
+            }
+        }
+    })
+</script>
+</body>
+</html>
