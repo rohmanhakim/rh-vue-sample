@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Vue Tutorial - 03 Render a List</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            todos: [
+                { text: 'Learn JavaScript' },
+                { text: 'Learn Vue.js' },
+                { text: 'Build something awesome' }
+            ]
+        }
+    })
+</script>
+</body>
+</html>
