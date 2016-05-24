@@ -51,6 +51,13 @@ new Vue({
                 this.events.push(this.event);
                 this.event = { name: '', description: '', date: ''};
             }
+        },
+
+        deleteEvent: function (index) {
+            if(confirm("Are you sure you want to delete this event?")){
+                // $remove is a Vue convenience method similar to splice
+                this.events.$remove(this.events[index]);
+            }
         }
     }
 });
